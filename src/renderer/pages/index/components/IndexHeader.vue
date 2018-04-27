@@ -18,6 +18,8 @@
       menuSelect (name) {
         if (name === '2') {
           this.$router.push('/index/profile')
+        } else if (name === '1') {
+          this.$router.push('/index/upload')
         }
       }
     }
