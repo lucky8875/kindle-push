@@ -1,35 +1,44 @@
 const nodemailer = require('nodemailer')
 
-export function sendMailWithBook () {
+function getAttachments (attachement) {
+  let result = []
+  attachement.forEach(item => {
+    result.push({
+      path: item.path,
+      encoding: 'base64',
+      contentType: 'application/x-mobipocket-ebook',
+      filename: item.filename
+    })
+  })
+  return result
+}
+
+export function sendMailWithBook (setting, attachement) {
   let transporter = nodemailer.createTransport({
-    host: 'smtp.163.com',
-    port: 465,
+    host: setting.host,
+    port: parseInt(setting.port),
     secure: true,
     auth: {
-      user: 'jyx15221613915@163.com',
-      pass: '123456789jyx'
+      user: setting.email,
+      pass: setting.pass
 
     }
   })
   let mailOptions = {
-    from: 'jyx15221613915 <jyx15221613915@163.com>',
-    to: '15221613915@kindle.cn',
+    from: `${setting.email.split('@')[0]} <${setting.email}>`,
+    to: setting.kindleEmail,
     subject: 'Convert',
-    text: 'Pushing to kindle from ' + 'C:\\Users\\mickle.jiang\\Downloads\\小狗钱钱.mobi',
-    attachments: [
-      {
-        path: 'C:\\Users\\mickle.jiang\\Downloads\\小狗钱钱.mobi',
-        encoding: 'base64',
-        contentType: 'application/x-mobipocket-ebook',
-        filename: '小狗钱钱.mobi'
-      }
-    ]
+    text: 'Start Pushing to kindle',
+    attachments: getAttachments(attachement)
   }
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error)
-    }
-    console.log('Message sent: %s', info.messageId)
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+  console.log(mailOptions)
+  return new Promise(function (resolve, reject) {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        reject(error)
+        return console.log(error)
+      }
+      resolve(info)
+    })
   })
 }

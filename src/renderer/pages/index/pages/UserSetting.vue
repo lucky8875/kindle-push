@@ -18,7 +18,7 @@
                     <Input :disabled="isEdit" v-model="settings.email" placeholder="请输入发送邮箱"/>
                 </FormItem>
                 <FormItem label="邮箱授权码" prop="pass">
-                    <Input :disabled="isEdit" v-model="settings.pass" placeholder="请输入邮箱授权码"/>
+                    <Input type="password" :disabled="isEdit" v-model="settings.pass" placeholder="请输入邮箱授权码"/>
                 </FormItem>
                 <FormItem>
                     <Button @click="isEdit = !isEdit" type="error">{{ isEdit == false ? '取消' : '编辑' }}</Button>
