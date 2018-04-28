@@ -1,9 +1,9 @@
 {
   "name": "kindle-push",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "mickle.jiang <mickle.jiang@rcchina.com>",
-  "description": "An electron-vue project",
-  "license": null,
+  "description": "一款项向kindle推送文档的程序",
+  "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -20,7 +20,7 @@
   },
   "build": {
     "productName": "kindle-push",
-    "appId": "org.simulatedgreg.electron-vue",
+    "appId": "com.jiangyixin.kindle-push",
     "directories": {
       "output": "build"
     },
