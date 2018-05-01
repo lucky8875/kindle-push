@@ -1,7 +1,7 @@
 {
   "name": "kindle-push",
   "version": "1.0.0",
-  "author": "mickle.jiang <mickle.jiang@rcchina.com>",
+  "author": "jiangyx3915 <jyx15221613915@gmail.com>",
   "description": "一款项向kindle推送文档的程序",
   "license": "MIT",
   "main": "./dist/electron/main.js",

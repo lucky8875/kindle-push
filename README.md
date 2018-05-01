@@ -1,25 +1,27 @@
 # kindle-push
 
-> An electron-vue project
+> 一款基于Electron + Vue开发的Kindle个人文档客户端程序
 
-#### Build Setup
+## 构建方式
+
+### Build Setup
 
 ``` bash
-# install dependencies
-npm install
+# 安装依赖
+npm install / yarn
 
-# serve with hot reload at localhost:9080
+# 启动热加载服务在localhost:9080
 npm run dev
 
-# build electron application for production
+# 应用打包
 npm run build
-
-
-# lint all JS/Vue component files in `src/`
-npm run lint
-
 ```
+## 项目截图
+
+[![page1.jpg](https://i.loli.net/2018/05/01/5ae86fa56e2f9.jpg)](https://i.loli.net/2018/05/01/5ae86fa56e2f9.jpg)
+[![page2.jpg](https://i.loli.net/2018/05/01/5ae86fa5776f5.jpg)](https://i.loli.net/2018/05/01/5ae86fa5776f5.jpg)
+
 
 ---
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[7c4e3e9](https://github.com/SimulatedGREG/electron-vue/tree/7c4e3e90a772bd4c27d2dd4790f61f09bae0fcef) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+希望大家多多给建议~~
